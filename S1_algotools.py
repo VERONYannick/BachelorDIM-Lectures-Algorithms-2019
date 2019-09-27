@@ -52,8 +52,29 @@ def max_value(tab):
             max_var_index=i
     return tab_fromList[max_var_index],max_var_index
 
-tab_list=np.random.randint(0,100000,1000).tolist()#Random array of 1000 positives int
-#tab_list=[10,15,24,16,85]
+def reverse_table(tab):
+    """Function that reverse an array
+    Args:
+        tab: an array
+    return the array reversed
+    """
+    tab_fromList=np.array(tab)
+    #swap_var = 0
+    for i,var in enumerate(tab_fromList):
+        tab_fromList[i], tab_fromList[(i*-1)-1] = tab_fromList[(i*-1)-1], tab_fromList[i]
+        print(tab_fromList[i])
+        print(tab_fromList[(i*-1)-1])
+    print(tab_fromList)
+    return tab_fromList
+
+
+
+        
+
+
+#tab_list=np.random.randint(0,100000,1000).tolist()#Random array of 1000 positives int
+tab_list=[10,15,24,16,85]
 average = average_above_zero(tab_list)
 print("moy =",average)
 print("max = ",max_value(tab_list))
+print("reverse =",reverse_table(tab_list))
