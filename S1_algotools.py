@@ -14,6 +14,9 @@ What can you expect if all the values are below zero ?
 import numpy as np
 import time
 import statistics as st
+import cv2
+
+DISPLAY_TIME=False
 
 def average_above_zero(tab):
     """Function that calculate average of array of positives int
@@ -64,6 +67,33 @@ def reverse_table(tab):
         tab_fromList[i], tab_fromList[(i*-1)-1] = tab_fromList[(i*-1)-1], tab_fromList[i]
     return tab_fromList
 
+def roi_bbox(input_image):
+    """Function that find the bounding box of an array of 1 inside a 2D array
+    Args:
+        input_image: a 2D array
+    return a 4x2 array with the four 2D coordinates (top-left,top,right,bottom-left,bottom-right)
+    """
+    rows=len(input_image)
+    cols=len(input_image[0])
+    minR=-1
+    maxR=-1
+    minC=cols
+    maxC=-1
+    for r in range(rows):
+        for c in range(cols):
+            if(input_image[r][c]!=0):
+                maxR=r
+                if(minR==-1):
+                    minR=r
+                if(c<minC):
+                    minC=c
+                if(c>maxC):
+                    maxC=c
+    coords=[[minR,minC],[minR,maxC],[maxR,minC],[maxR,maxC]]
+    return coords 
+                
+
+
 
 #tab_list=np.random.randint(0,1000000,1000).tolist()#Random array of 1000 positives int
 tab_list=[10,15,24,95,16,85,35,58,63,14]
@@ -96,14 +126,29 @@ start_time = time.perf_counter()
 reverse = tab_list.reverse()
 reverse_time=(time.perf_counter() - start_time)*1000000
 
+"""
+matrix=np.zeros((10,10),dtype=np.int32)
+matrix[3:6,4:8]=np.ones((3,4),dtype=np.int32)
+print(matrix)
+print(roi_bbox(matrix))
+"""
 
-print("\nTime : ")
-print("\naverage_above_zero() : ",average_above_zero_time,"microsecondes")
-print("mean() : ",mean_time,"microsecondes")
-print("mean() : ",round(average_above_zero_time/max_time,2),"x faster")
-print("\nmax_value() : ",max_value_time,"microsecondes")
-print("max() : ",max_time,"microsecondes")
-print("max() is ",round(max_value_time/max_time,2),"x faster")
-print("\nreverse_table() : ",reverse_table_time,"microsecondes")
-print("reverse() : ",max_time,"microsecondes")
-print("reverse() is ",round(reverse_table_time/reverse_time,2),"x faster")
+img=cv2.imread("img_sample.png",0)
+roi = roi_bbox(img)
+print('roi_bbox : ',roi)
+#cv2.rectangle(img, (roi[0][0],roi[0][1]), (roi[3][0], roi[3][1]), (255,255,255), 10)
+#cv2.imshow("read img",img)
+#cv2.waitKey()
+
+
+if(DISPLAY_TIME):
+    print("\nTime : ")
+    print("\naverage_above_zero() : ",average_above_zero_time,"microsecondes")
+    print("mean() : ",mean_time,"microsecondes")
+    print("mean() : ",round(average_above_zero_time/max_time,2),"x faster")
+    print("\nmax_value() : ",max_value_time,"microsecondes")
+    print("max() : ",max_time,"microsecondes")
+    print("max() is ",round(max_value_time/max_time,2),"x faster")
+    print("\nreverse_table() : ",reverse_table_time,"microsecondes")
+    print("reverse() : ",max_time,"microsecondes")
+    print("reverse() is ",round(reverse_table_time/reverse_time,2),"x faster")
