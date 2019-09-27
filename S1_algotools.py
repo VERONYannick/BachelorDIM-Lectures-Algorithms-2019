@@ -59,20 +59,51 @@ def reverse_table(tab):
     return the array reversed
     """
     tab_fromList=np.array(tab)
-    for i,var in enumerate(tab_fromList):
+    size = int(len(tab_fromList)/2)
+    for i in range(size):
         tab_fromList[i], tab_fromList[(i*-1)-1] = tab_fromList[(i*-1)-1], tab_fromList[i]
-        if i+1>=len(tab_fromList)/2:
-            break
     return tab_fromList
 
 
+#tab_list=np.random.randint(0,1000000,1000).tolist()#Random array of 1000 positives int
+tab_list=[10,15,24,95,16,85,35,58,63,14]
 
-
-#tab_list=np.random.randint(0,100000,1000).tolist()#Random array of 1000 positives int
-tab_list=[10,15,24,52,16,85,35]
-
-average = average_above_zero(tab_list)
 print("list : ",tab_list)
+start_time = time.perf_counter()
+average=average_above_zero(tab_list)
+average_above_zero_time=(time.perf_counter()-start_time)*1000000 #to micro second
 print("moy =",average)
-print("max = ",max_value(tab_list))
-print("reverse =",reverse_table(tab_list))
+
+start_time = time.perf_counter()
+st.mean(tab_list)
+mean_time=(time.perf_counter() - start_time)*1000000
+
+start_time = time.perf_counter()
+maxVal = max_value(tab_list)
+max_value_time=(time.perf_counter() - start_time)*1000000
+print("max = ",maxVal)
+
+start_time = time.perf_counter()
+max(tab_list)
+max_time=(time.perf_counter() - start_time)*1000000
+
+start_time = time.perf_counter()
+reverse = reverse_table(tab_list)
+reverse_table_time=(time.perf_counter() - start_time)*1000000
+print("reverse =",reverse)
+
+start_time = time.perf_counter()
+reverse = tab_list.reverse()
+reverse_time=(time.perf_counter() - start_time)*1000000
+
+
+print("\nTime : ")
+print("\naverage_above_zero() : ",average_above_zero_time,"microsecondes")
+print("mean() : ",mean_time,"microsecondes")
+print("mean() : ",round(average_above_zero_time/max_time,2),"x faster")
+print("\nmax_value() : ",max_value_time,"microsecondes")
+print("max() : ",max_time,"microsecondes")
+print("max() is ",round(max_value_time/max_time,2),"x faster")
+print("\nreverse_table() : ",reverse_table_time,"microsecondes")
+print("reverse() : ",max_time,"microsecondes")
+print("reverse() is ",round(reverse_table_time/reverse_time,2),"x faster")
