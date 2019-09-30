@@ -91,7 +91,11 @@ def roi_bbox(input_image):
                     maxC=c
     coords=[[minR,minC],[minR,maxC],[maxR,minC],[maxR,maxC]]
     return coords 
-                
+
+def random_fill_sparse(table, K):
+    for i in range(K):
+        coord = np.random.rand(10000, 2) * 2
+        print(coord)
 
 
 
@@ -126,6 +130,8 @@ start_time = time.perf_counter()
 reverse = tab_list.reverse()
 reverse_time=(time.perf_counter() - start_time)*1000000
 
+
+
 """
 matrix=np.zeros((10,10),dtype=np.int32)
 matrix[3:6,4:8]=np.ones((3,4),dtype=np.int32)
@@ -139,6 +145,8 @@ print('roi_bbox : ',roi)
 #cv2.rectangle(img, (roi[0][0],roi[0][1]), (roi[3][0], roi[3][1]), (255,255,255), 10)
 #cv2.imshow("read img",img)
 #cv2.waitKey()
+
+random_fill_sparse(np.zeros((5,5),dtype=np.int32),3)
 
 
 if(DISPLAY_TIME):
