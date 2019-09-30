@@ -119,9 +119,12 @@ def random_fill_sparse(table, K):
     return the table with 'X' in it
     """
     for i in range(K):
-        hCoord=np.random.randint(len(table))
-        wCoord=np.random.randint(len(table[0]))
-        table[hCoord][wCoord]="X"
+        while True:
+            hCoord=np.random.randint(len(table))
+            wCoord=np.random.randint(len(table[0]))
+            if(table[hCoord][wCoord]!=b'X'):
+                table[hCoord][wCoord]="X"
+                break
     return table
 
 #tab_list=np.random.randint(0,1000000,1000).tolist()#Random array of 1000 positives int

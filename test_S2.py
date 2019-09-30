@@ -87,6 +87,8 @@ def test_roi_bbox_working():
 """--------------TEST random_fill_sparse---------------"""
 def test_random_fill_sparse_working():
     """Function that test if random_fill_sparse return an array with 'X'"""
-    charar=np.chararray((3, 3))
+    charar=np.chararray((5, 5))
     charar[:] = '0'
-    assert np.any(s1.random_fill_sparse(charar,3)[:, 0] == b'X')==True
+    arr = s1.random_fill_sparse(charar,2)
+    condition = arr == b'X'
+    assert np.count_nonzero(condition)==2
