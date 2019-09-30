@@ -124,8 +124,6 @@ def random_fill_sparse(table, K):
         table[hCoord][wCoord]="X"
     return table
 
-
-
 #tab_list=np.random.randint(0,1000000,1000).tolist()#Random array of 1000 positives int
 tab_list=[10,15,24,95,16,85,35,58,63,14]
 
