@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/VERONYannick/BachelorDIM-Lectures-Algorithms-2019.svg?branch=master)](https://travis-ci.org/VERONYannick/BachelorDIM-Lectures-Algorithms-2019)
-[![Coverage Status](https://coveralls.io/repos/github/VERONYannick/BachelorDIM-Lectures-Algorithms-2019/badge.svg)](https://coveralls.io/github/VERONYannick/BachelorDIM-Lectures-Algorithms-2019)
+[![Coverage Status](https://coveralls.io/repos/github/VERONYannick/BachelorDIM-Lectures-Algorithms-2019/badge.svg?branch=master)](https://coveralls.io/github/VERONYannick/BachelorDIM-Lectures-Algorithms-2019?branch=master)
 
 
 # BachelorDIM-Lectures-Algorithms-2019
