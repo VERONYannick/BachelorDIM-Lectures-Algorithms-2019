@@ -72,12 +72,12 @@ def test_revese_table_working():
 def test_roi_bbox_expected_ndarray():
     """Function that test if reverse_table raise exeption when the param is not a ndarray"""
     with pytest.raises(ValueError):
-        s1.reverse_table(15)
+        s1.roi_bbox(15)
 
 def test_roi_bbox_empty():
     """Function that test if reverse_table raise exeption when the param is an empty list"""
     with pytest.raises(ValueError):
-        s1.reverse_table([])
+        s1.roi_bbox([])
 
 def test_roi_bbox_working():
     img=cv2.imread("img_sample.png",0)
