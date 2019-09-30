@@ -8,3 +8,4 @@ urllib3>=1.21.1
 pytest-cov>=2.5.1
 coveralls>=1.2.0
 opencv-python>=4.1.0.25
+coveralls>=1.2.0
