@@ -16,7 +16,7 @@ import time
 import statistics as st
 import cv2
 
-DISPLAY_TIME=False
+#DISPLAY_TIME=False
 
 def average_above_zero(tab):
     """Function that calculate average of array of positives int
@@ -125,7 +125,7 @@ def random_fill_sparse(table, K):
     return table
 
 #tab_list=np.random.randint(0,1000000,1000).tolist()#Random array of 1000 positives int
-tab_list=[10,15,24,95,16,85,35,58,63,14]
+'''tab_list=[10,15,24,95,16,85,35,58,63,14]
 
 print("list : ",tab_list)
 start_time = time.perf_counter()
@@ -170,9 +170,10 @@ print('roi_bbox : ',roi)
 #cv2.waitKey()
 charar=np.chararray((3, 3))
 charar[:] = '0'
-print(random_fill_sparse(charar,5))
-print(np.where(random_fill_sparse(charar,3)==b'X'))
+print(random_fill_sparse(charar,5))'''
 
+
+'''
 if(DISPLAY_TIME):
     print("\nTime : ")
     print("\naverage_above_zero() : ",average_above_zero_time,"microsecondes")
@@ -183,4 +184,4 @@ if(DISPLAY_TIME):
     print("max() is ",round(max_value_time/max_time,2),"x faster")
     print("\nreverse_table() : ",reverse_table_time,"microsecondes")
     print("reverse() : ",max_time,"microsecondes")
-    print("reverse() is ",round(reverse_table_time/reverse_time,2),"x faster")
+    print("reverse() is ",round(reverse_table_time/reverse_time,2),"x faster")'''
