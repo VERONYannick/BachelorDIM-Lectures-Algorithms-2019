@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/VERONYannick/BachelorDIM-Lectures-Algorithms-2019.svg?branch=master)](https://travis-ci.org/VERONYannick/BachelorDIM-Lectures-Algorithms-2019)
 [![Coverage Status](https://coveralls.io/repos/github/VERONYannick/BachelorDIM-Lectures-Algorithms-2019/badge.svg?branch=master)](https://coveralls.io/github/VERONYannick/BachelorDIM-Lectures-Algorithms-2019?branch=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=VERONYannick_BachelorDIM-Lectures-Algorithms-2019&metric=alert_status)](https://sonarcloud.io/dashboard?id=VERONYannick_BachelorDIM-Lectures-Algorithms-2019)
+
+
 
 
 # BachelorDIM-Lectures-Algorithms-2019
