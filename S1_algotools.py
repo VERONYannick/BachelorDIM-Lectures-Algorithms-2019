@@ -155,8 +155,6 @@ start_time = time.perf_counter()
 reverse = tab_list.reverse()
 reverse_time=(time.perf_counter() - start_time)*1000000
 
-
-
 """
 matrix=np.zeros((10,10),dtype=np.int32)
 matrix[3:6,4:8]=np.ones((3,4),dtype=np.int32)
@@ -174,7 +172,6 @@ charar=np.chararray((3, 3))
 charar[:] = '0'
 print(random_fill_sparse(charar,5))
 print(np.where(random_fill_sparse(charar,3)==b'X'))
-
 
 if(DISPLAY_TIME):
     print("\nTime : ")
