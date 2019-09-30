@@ -54,12 +54,12 @@ def test_reverse_table_expected_list():
         s1.reverse_table(15)
 
 def test_reverse_table_empty():
-    """Function that test if reverse_table_zero raise exeption when the param is an empty list"""
+    """Function that test if reverse_table raise exeption when the param is an empty list"""
     with pytest.raises(ValueError):
         s1.reverse_table([])
 
 def  test_reverse_table_expected_number_list():
-    """Function that test if reverse_table_zero raise exeption when the param is an not a numbers list"""
+    """Function that test if reverse_table raise exeption when the param is an not a numbers list"""
     with pytest.raises(ValueError):
         s1.reverse_table(["e","r","r","o","r"])
 
@@ -75,7 +75,7 @@ def test_roi_bbox_expected_ndarray():
         s1.reverse_table(15)
 
 def test_roi_bbox_empty():
-    """Function that test if reverse_table_zero raise exeption when the param is an empty list"""
+    """Function that test if reverse_table raise exeption when the param is an empty list"""
     with pytest.raises(ValueError):
         s1.reverse_table([])
 
