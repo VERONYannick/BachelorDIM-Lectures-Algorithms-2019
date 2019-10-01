@@ -35,7 +35,7 @@ def invert_colors_opencv(input_img):
     input_img = cv2.bitwise_not(input_img)
     return input_img
 
-
+"""
 img_gray=cv2.imread("pika.png",0)#load an image in gray levels
 img_bgr=cv2.imread("pika.png",1)#load an image in Blue Green Red
 #display the matrix shapes
@@ -47,6 +47,7 @@ cv2.imshow("BGR image", img_bgr)
 
 start_time = time.perf_counter()
 inverted = invert_colors_manual(img_bgr)
+print(type(inverted))
 invert_colors_manual_time=(time.perf_counter() - start_time)*1000000
 cv2.imshow("inverted image manual", inverted)
 
@@ -65,4 +66,4 @@ print("Manual : ",invert_colors_manual_time," microsecondes")
 print("Numpy : ",invert_colors_numpy_time," microsecondes")
 print("CV2 : ",invert_colors_ocv_time," microsecondes")
 
-cv2.waitKey()
+cv2.waitKey()"""
